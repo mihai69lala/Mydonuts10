@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mydonuts</title>
+  <link rel="stylesheet" href="mdstyle.css" />
+</head>
+<body>
+  <!-- Navigație -->
+  <header class="navbar">
+    <div class="logo">🍩 Mydonuts</div>
+    <nav>
+      <ul>
+        <li><a href="#intro">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#comanda">Comandă</a></li>
+      </ul>
+    </nav>
+    <!-- Zona coș -->
+    <div id="cartSummary" class="cart-summary">
+      🛒 <span id="cartCount">0</span> produse | Total: <span id="cartTotal">0.00</span> lei
+      <button id="clearCartBtn" class="btn-clear" title="Golește coșul">🗑️</button>
+    </div>
+  </header>
+
+  <!-- Fundal video -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="video0001-0250.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay-text">
+      <h1>🍩 Mydonuts</h1>
+      <p style="font-size: 15px;">Indrăgostește-te de gustul autentic al gogoșilor noastre</p>
+      <a href="#meniu" class="btn">Vezi Meniul</a>
+    </div>
+  </div>
+
+  <!-- Despre -->
+  <section id="intro" class="intro reveal">
+    <h2>Despre noi</h2>
+    <p style="font-size: 18px;"
+ 	padding-left: 20px;
+    	padding-right: 20px; >
+      De peste 10 ani, MyDonuts aduce în casele clienților săi gustul inconfundabil al gogoșilor proaspete și delicioase. Totul a început din pasiunea pentru deserturi autentice și dorința de a oferi o experiență dulce, care să aducă zâmbete pe chipuri. Ceea ce ne recomandă este atenția pentru detalii, folosirea ingredientelor naturale și rețetele tradiționale reinterpretate cu grijă. Fiecare gogoșă este preparată manual, cu dragoste și respect pentru calitate, iar feedback-ul pozitiv al clienților noștri ne motivează să fim mereu mai buni.
+      <br><br>
+      Pe lângă gogoșile noastre delicioase, suntem mândri să oferim și o selecție rafinată de sucuri naturale și băuturi răcoritoare non-alcoolice, create special pentru a completa perfect gustul deserturilor noastre. Suntem buni la asta – mixăm cu grijă ingrediente proaspete și arome echilibrate pentru a vă aduce în pahar prospețimea și savoarea pe care le meritați. Fiecare băutură este un răsfăț pentru simțuri, atent creată pentru a se potrivi cu delicatețea și autenticitatea gogoșilor noastre.
+      <br><br>
+      Suntem mândri să deținem certificările de siguranță alimentară ISO 22000 și să respectăm toate normele europene, asigurând astfel prospețime și siguranță pentru fiecare produs. MyDonuts nu este doar un brand, ci o poveste dulce care continuă să crească, aducând bucurie în fiecare mușcătură și fiecare înghițitură. Vă invităm să descoperiți gustul nostru autentic și să vă bucurați de o experiență completă, în care deserturile de excepție și sucurile noastre rafinate se întâlnesc pentru a vă oferi momente memorabile.
+    </p>
+  </section>
+
+  <!-- Meniu -->
+  <section id="meniu" class="meniu-section reveal">
+    <h2>Meniul nostru</h2>
+    <div class="meniu-grid" id="meniuGrid">
+
+      <!-- Gogoși -->
+      <div class="produs" onclick="afiseazaProdus('gogosi1.jpg','Gogoși cu ciocolată',6, ['Făină albă premium','Lapte proaspăt','Ouă de țară','Unt natural','Cremă de ciocolată belgiană'],'Gogoși pufoase umplute cu ciocolată caldă.')">
+  <img src="img/gogosi1.jpg" alt="Gogoși cu ciocolată" />
+  <h3>Gogoși cu ciocolată</h3>
+  <p>6 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi2.jpg','Gogoși cu gem de zmeură',5.5, ['Gem de zmeură homemade','Făină','Ouă','Lapte','Zahăr pudră'],'Dulce și aromată, cu gust autentic de casă.')">
+  <img src="img/gogosi2.jpg" alt="Gogoși cu gem de zmeură" />
+  <h3>Gogoși cu gem de zmeură</h3>
+  <p>5.5 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi3.jpg','Gogoși cu vanilie și scorțișoară',6.5, ['Cremă de vanilie','Scorțișoară măcinată','Făină','Unt','Lapte'],'Un deliciu cald cu aromă clasică și rafinată.')">
+  <img src="img/gogosi3.jpg" alt="Gogoși cu vanilie" />
+  <h3>Gogoși cu vanilie și scorțișoară</h3>
+  <p>6.5 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi4.jpg','Gogoși cu cremă de fistic',7, ['Fistic măcinat','Lapte condensat','Făină de calitate','Unt','Ouă'],'Exotice, cremoase și perfect echilibrate.')">
+  <img src="img/gogosi4.jpg" alt="Gogoși cu fistic" />
+  <h3>Gogoși cu fistic</h3>
+  <p>7 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi5.jpg','Gogoși cu caramel sărat',7.5, ['Caramel sărat','Lapte proaspăt','Făină','Ouă','Vanilie'],'O combinație inedită dulce-sărată.')">
+  <img src="img/gogosi5.jpg" alt="Gogoși cu caramel sărat" />
+  <h3>Gogoși cu caramel sărat</h3>
+  <p>7.5 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi6.jpg','Gogoși glazurate cu topping colorat',5, ['Glazură de zahăr','Decor colorat','Făină','Lapte','Ouă'],'Perfecte pentru cei mici și pentru poze!')">
+  <img src="img/gogosi6.jpg" alt="Gogoși glazurate" />
+  <h3>Gogoși glazurate</h3>
+  <p>5 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi7.jpg','Gogoși cu crema de mango și cocos',7, ['Piure de mango','Lapte de cocos','Făină albă','Ouă','Zahăr brun'],'Exotic și răcoritor, cu aromă tropicală.')">
+  <img src="img/gogosi7.jpg" alt="Gogoși cu crema de mango și cocos" />
+  <h3>Gogoși cu crema de mango și cocos</h3>
+  <p>7 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi8.jpg','Gogoși cu ciocolată albă și fructe de pădure',8, ['Ciocolată albă','Mix fructe de pădure','Făină','Ouă','Lapte'],'Dulce și ușor acidulat, un duo perfect.')">
+  <img src="img/gogosi8.jpg" alt="Gogoși cu ciocolată albă și fructe de pădure" />
+  <h3>Gogoși cu ciocolată albă și fructe de pădure</h3>
+  <p>8 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi9.jpg','Gogoși cu cremă de cafea și nuci',7.5, ['Cremă de cafea','Nuci prăjite','Făină','Unt','Ouă'],'Perfecte pentru iubitorii de cafea cu textură crocantă.')">
+  <img src="img/gogosi9.jpg" alt="Gogoși cu cremă de cafea și nuci" />
+  <h3>Gogoși cu cremă de cafea și nuci</h3>
+  <p>7.5 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi10.jpg','Gogoși cu caramel și sare de mare',7, ['Caramel sărat','Făină','Ouă','Lapte','Unt'],'Combinația dulce-sărată, clasică și irezistibilă.')">
+  <img src="img/gogosi10.jpg" alt="Gogoși cu caramel și sare de mare" />
+  <h3>Gogoși cu caramel și sare de mare</h3>
+  <p>7 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('gogosi11.jpg','Gogoși cu cremă de lavandă și miere',8, ['Cremă de lavandă','Miere naturală','Făină','Ouă','Unt'],'Un gust floral și delicat, ideal pentru relaxare.')">
+  <img src="img/gogosi11.jpg" alt="Gogoși cu cremă de lavandă și miere" />
+  <h3>Gogoși cu cremă de lavandă și miere</h3>
+  <p>8 lei</p>
+</div>
+
+<!-- Bauturi -->
+<div class="produs" onclick="afiseazaProdus('miragge.jpg','Miragge Tropical',13, ['Suc de mango','Piure de guava','Apă de cocos','Lămâie verde'],'Un vis tropical, perfect pentru zilele toride.')">
+  <img src="img/miragge.jpg" alt="Miragge Tropical" />
+  <h3>Miragge Tropical</h3>
+  <p>13 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('inferno.jpg','Inferno Fructat',11.5, ['Ardei iute roșu infuzat','Zmeură','Lămâie','Gheață carbonică'],'O combinație îndrăzneață de dulce și picant.')">
+  <img src="img/inferno.jpg" alt="Inferno Fructat" />
+  <h3>Inferno Fructat</h3>
+  <p>11.5 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('anubis.jpg','Anubis Secret',14, ['Ceai negru rece','Curmale egiptene','Cardamom','Esență de trandafir'],'Inspirată din misterele Egiptului Antic.')">
+  <img src="img/anubis.jpg" alt="Anubis Secret" />
+  <h3>Anubis Secret</h3>
+  <p>14 lei</p>
+</div>
+
+<div class="produs" onclick="afiseazaProdus('espresso-senorita.jpg','Espresso Señorita',8, ['Cafea espresso tare', 'Laptele spumat', 'Un strop de scorțișoară'],'O cafea intensă și rafinată cu o notă elegantă spaniolă.')">
+  <img src="img/espresso-senorita.jpg" alt="Espresso Señorita" />
+  <h3>Espresso Señorita</h3>
+  <p>8 lei</p>
+</div>
+
+    </div>
+  </section>
+
+  <!-- Detaliu produs -->
+  <section id="produsDetaliu" class="produs-detaliu" style="display: none;">
+    <img id="produsImg" src="" alt="produs" />
+    <div class="produs-info">
+      <h2 id="produsTitlu"></h2>
+      <p id="produsPret" class="pret"></p>
+      <h4>Ingrediente:</h4>
+      <ul id="produsIngrediente"></ul>
+      <p id="produsDescriere"></p>
+      <button id="addToCartBtn" class="btn">Adaugă în coș</button>
+      <button onclick="inchideDetaliu()" class="btn">Înapoi la meniu</button>
+    </div>
+  </section>
+
+  <!-- Comandă -->
+  <section id="comanda" class="comanda reveal">
+    <div>
+  <button class="btn" onclick="location.href='checkout.html'">
+    Comanda
+  </button>
+</div>
+ 
+  </section>
+<!-- Buton coș -->
+<button id="btn-vezi-cos" class="btn">Vezi coșul</button>
+
+<!-- Popup coș -->
+<div id="cos-popup" class="cos-popup">
+  <div class="cos-content">
+    <span id="inchide-cos" class="inchide">&times;</span>
+    <h2>Conținut Coș</h2>
+    <ul id="lista-cosului"></ul>
+    <p id="mesaj-cos-gol" style="display:none;">Coșul este gol.</p>
+  </div>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Gogoșeria Magică • Toate drepturile rezervate.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Variabile globale pentru produsul curent
+    let produsCurent = null;
+
+    // Coș de cumpărături - stocăm produse aici
+    const cos = [];
+
+    function afiseazaProdus(img, titlu, pret, ingrediente, descriere) {
+      produsCurent = { img, titlu, pret, ingrediente, descriere };
+
+      document.getElementById("meniuGrid").style.display = "none";
+      document.getElementById("produsDetaliu").style.display = "flex";
+
+      document.getElementById("produsImg").src = "img/" + img;
+      document.getElementById("produsTitlu").innerText = titlu;
+      document.getElementById("produsPret").innerText = pret + " lei";
+      document.getElementById("produsDescriere").innerText = descriere;
+
+      const lista = document.getElementById("produsIngrediente");
+      lista.innerHTML = "";
+      ingrediente.forEach(item => {
+        const li = document.createElement("li");
+        li.innerText = item;
+        lista.appendChild(li);
+      });
+    }
+
+    function inchideDetaliu() {
+      document.getElementById("produsDetaliu").style.display = "none";
+      document.getElementById("meniuGrid").style.display = "grid";
+      produsCurent = null;
+    }
+
+    // Adaugă produsul curent în coș
+    function adaugaInCos() {
+      if (!produsCurent) return;
+
+      // Caută produsul în coș după titlu, dacă există crește cantitatea
+      const produsGasit = cos.find(item => item.titlu === produsCurent.titlu);
+      if (produsGasit) {
+        produsGasit.cantitate++;
+      } else {
+        cos.push({...produsCurent, cantitate: 1});
+      }
+
+      actualizeazaCos();
+      alert(`Produsul "${produsCurent.titlu}" a fost adăugat în coș!`);
+    }
+
+    // Actualizează afișarea coșului
+    function actualizeazaCos() {
+      const count = cos.reduce((acc, item) => acc + item.cantitate, 0);
+      const total = cos.reduce((acc, item) => acc + item.pret * item.cantitate, 0);
+
+      document.getElementById("cartCount").innerText = count;
+      document.getElementById("cartTotal").innerText = total.toFixed(2);
+    }
+
+    // Golește coșul
+    function golesteCos() {
+      if (confirm("Sigur vrei să golești coșul?")) {
+        cos.length = 0;
+        actualizeazaCos();
+      }
+    }
+
+    // Scroll reveal
+    window.addEventListener("scroll", function () {
+      const reveals = document.querySelectorAll(".reveal");
+      for (let el of reveals) {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          el.classList.add("active");
+        }
+      }
+    });
+
+    // Legăm butonul "Adaugă în coș"
+    document.getElementById("addToCartBtn").addEventListener("click", adaugaInCos);
+
+    // Legăm butonul de golire coș
+    document.getElementById("clearCartBtn").addEventListener("click", golesteCos);
+	// Deschide popup coș
+document.getElementById("btn-vezi-cos").addEventListener("click", function () {
+  document.getElementById("cos-popup").style.display = "block";
+  afiseazaListaCos();
+});
+
+// Închide popup coș
+document.getElementById("inchide-cos").addEventListener("click", function () {
+  document.getElementById("cos-popup").style.display = "none";
+});
+
+// Afișează lista de produse în coș
+function afiseazaListaCos() {
+  const lista = document.getElementById("lista-cosului");
+  const mesajGol = document.getElementById("mesaj-cos-gol");
+  lista.innerHTML = "";
+
+  if (cos.length === 0) {
+    mesajGol.style.display = "block";
+    return;
+  }
+
+  mesajGol.style.display = "none";
+
+  cos.forEach(item => {
+    const li = document.createElement("li");
+    li.innerText = `${item.titlu} x${item.cantitate} - ${(item.pret * item.cantitate).toFixed(2)} lei`;
+    lista.appendChild(li);
+  });
+}
+function afiseazaProdus(img, titlu, pret, ingrediente, descriere) {
+  produsCurent = { img, titlu, pret, ingrediente, descriere };
+
+  document.getElementById("meniuGrid").style.display = "none";
+  document.getElementById("produsDetaliu").style.display = "flex";
+
+  document.getElementById("produsImg").src = "img/" + img;
+  document.getElementById("produsTitlu").innerText = titlu;
+  document.getElementById("produsPret").innerText = pret + " lei";
+  document.getElementById("produsDescriere").innerText = descriere;
+
+  const lista = document.getElementById("produsIngrediente");
+  lista.innerHTML = "";
+  ingrediente.forEach(item => {
+    const li = document.createElement("li");
+    li.innerText = item;
+    lista.appendChild(li);
+  });
+}
+  </script>
+</body>
+</html>

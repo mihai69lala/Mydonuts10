@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+body
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#73c1ff,#fff);
+}
+.payment
+{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    transform: translateY(-63px);
+    transition: 0.5s;
+}
+.payment:hover
+{
+    padding: 40px;
+    transform: translateY(0);
+}
+.payment .bg
+{
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 25px;
+    background: linear-gradient(225deg,#2196f3,#ff4efd);
+}
+.payment .card
+{
+    position: relative;
+    width: 580px;
+    height: 350px;
+    background: #fcfcfc;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.05);
+    z-index: 1000;
+    overflow: hidden;
+    transform: translateY(127px);
+    transition: 0.54s;
+}
+.payment:hover .card
+{
+     transform: translateY(0);
+}
+.payment .card::before
+{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom,rgba(19, 18, 18, 0.05),transparent);
+    pointer-events: none;
+}
+.chip
+{
+    position: center;
+    max-width: 60px;
+
+    
+}
+.logo
+{
+    position: absolute;
+    top: 130px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #ea222c;
+    border-radius: 50%;
+    box-shadow: -40px 0 0 rgba(255,164,36,0.5);
+}
+.bankName
+{
+    color:#999;
+    text-align: end;
+    outline: none;
+    width: 100%;
+    font-size: 1.5em;
+}
+.form
+{
+    margin-top: 45px;
+}
+.inputBox
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+}
+.inputBox span
+{
+    
+    color: #089cff;
+    font-size: 1.1em;
+
+}
+.inputBox input
+{
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.8em;
+    color: #0c0c0c;
+    font-family: "Share Tech Mono", monospace;
+}
+.group
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.group .inputBox:last-child
+{
+    max-width: 60px;
+}
+.payment .btn
+{
+    position: relative;
+    margin-top: 40px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background:#fff ;
+    color: #333;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+}
+
+.phone-input {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.phone-input select,
+.phone-input input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  transition: 0.3s ease all;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.phone-input select:hover,
+.phone-input input:hover,
+.phone-input select:focus,
+.phone-input input:focus {
+  border-color: #73c1ff;
+  box-shadow: 0 0 5px rgba(115, 193, 255, 0.6);
+}
+.information
+{
+    align-items: center;
+    justify-content:right;
+    padding-left:100px;
+    padding-bottom:250px;
+    transform: translateY(-63px);
+    transition: 0.5s;
+}
+.information .adress
+{
+    position: relative;
+    width: 580px;
+    height: 750px;
+    background: #fcfcfc;
+    border-radius: 15px;
+    padding: 40px;
+    font-family: 'Courier New', monospace;
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.05);
+    z-index: 1000;
+    overflow: hidden;
+    transform: translateY(127px);
+    transition: 0.54s;
+}
+
+.btnn 
+{
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #2b67d8, #a255ee);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.7s ease;
+   box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btnn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.btnn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btnn:hover {
+  background: linear-gradient(135deg, #5a67d8, #a04dd8);
+  transform: translateY(-3px) scale(1.24);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btnn:active {
+  transform: translateY(0px) scale(0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.buton-intoarcere
+{
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #2b67d8, #a255ee);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.7s ease;
+   box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
