@@ -56,13 +56,34 @@ header nav ul li a {
   position: relative;
   transition: color 0.3s ease;
 }
+
+header nav ul li a::after {
+  content: '';
+  position: relative;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #92154f;
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #92154f;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Cos popup */
 .cos-popup {
-  display: none; /* ascuns implicit */
+  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(247,161,204,0.85); /* roz semi-transparent */
+  background: rgba(247,161,204,0.85);
   backdrop-filter: blur(6px);
   z-index: 2000;
   justify-content: center;
@@ -121,24 +142,6 @@ header nav ul li a {
 .inchide:hover {
   color: #f7a1cc;
 }
-header nav ul li a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #92154f;
-  transition: width 0.3s ease;
-}
-
-header nav ul li a:hover {
-  color: #92154f;
-}
-
-header nav ul li a:hover::after {
-  width: 100%;
-}
 
 /* video background container */
 .video-container {
@@ -192,13 +195,13 @@ video {
   box-shadow: 0 0 15px #b21f66;
 }
 
-/* buttons (generale) */
+/* buttons */
 .btn {
   display: inline-block;
   padding: 12px 30px;
   background-color: #b21f66;
   color: white;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: 25px;
   border: none;
   cursor: pointer;
@@ -212,12 +215,80 @@ video {
   transform: scale(1.1);
   box-shadow: 0 0 15px #b21f66;
 }
+.btn-vezi-cosul {
+   position: absolute;
+  top: 12px;
+  right: 70px; /* distanță de la dreapta, ajustează după nevoie */
+  padding: 10px 25px;
+  background-color: #b21f66;
+  color: white;
+  font-weight: 700;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  z-index: 15;
+}
+#btn-vezi-cos:hover {
+ background-color: #92154f;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #b21f66;
+}
 
-/* sections with fade slide */
+
+/* sections */
 .intro, .meniu-section, .comanda {
   padding: 100px 20px 60px;
   text-align: center;
   animation: slideFadeIn 1s ease forwards;
+}
+#recenzie {
+  border: 2px solid rgb(249, 249, 249);
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 700px;
+  background-color: #fff8f8;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(90, 47, 87, 0.2);
+}
+
+#recenzie h5 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(216, 22, 158);
+  text-transform: uppercase;
+}
+
+#recenzie p {
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: pre-line; /* respectă liniile noi din text */
+}
+
+#recenzie p::after {
+  content: "";
+  display: block;
+  margin-top: 15px;
+}
+
+/* Evidențierea numelui autorilor */
+#recenzie p::before {
+  content: "";
+  display: block;
+}
+
+#recenzie p {
+  font-family: Arial, sans-serif;
+}
+
+#recenzie p strong {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #da48b3;
+  font-size: 17px;
 }
 
 .intro h2, .meniu-section h2, .comanda h2 {
@@ -237,9 +308,23 @@ video {
 /* menu grid */
 .meniu-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* fix 5 produse pe linie */
+  grid-template-columns: repeat(5, 1fr);
   gap: 25px;
   margin-top: 30px;
+}
+#btn-user {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+#btn-user:hover {
+  transform: scale(1.2);
 }
 
 .produs {
@@ -338,7 +423,6 @@ footer {
 }
 
 /* animations keyframes */
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -389,4 +473,68 @@ footer {
 @keyframes slideUpFooter {
   from { opacity: 0; transform: translateY(80px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* TABLETĂ */
+@media (max-width: 1024px) {
+  .meniu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  header.navbar {
+    padding: 15px 20px;
+  }
+}
+
+/* TELEFON MARE */
+@media (max-width: 768px) {
+  .meniu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overlay-text {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+
+  header nav ul {
+    gap: 15px;
+  }
+
+  .produs {
+    height: auto;
+  }
+
+  .produs img {
+    height: 150px;
+  }
+}
+
+/* TELEFON MIC */
+@media (max-width: 480px) {
+  .meniu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay-text {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .intro h2, .meniu-section h2, .comanda h2 {
+    font-size: 1.8rem;
+  }
+
+  header.navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
