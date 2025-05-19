@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Donut</title>
+  <link rel="stylesheet" href="stylelog.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="donut" onclick="toggleForm()">
+      🍩
+    </div>
+    <h2 id="form-title">Sign In</h2>
+    <form id="auth-form">
+      <input type="email" placeholder="Email" required />
+      <div class="password-wrapper" style="position: relative;">
+        <input id="password" type="password" placeholder="Password" required />
+        <button type="button" id="togglePassword" 
+                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); 
+                       background: none; border: none; cursor: pointer; font-size: 1.3rem; display: flex; align-items: center; color: #888;"
+                title="Arată parola">👁️
+        </button>
+      </div>
+      <a href="#" id="forgot-password">Forgot your password?</a>
+      <button type="submit">Continue</button>
+    </form>
+    <div class="actions">
+      <p>Or quick login:</p>
+      <button onclick="loginWithGoogle()" class="google-btn">Login with Google</button>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+  <!-- Configurare Firebase -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBtQQNVyyMNrkqBJnDEXgduhIAFpbRikws",
+      authDomain: "donutlogin.firebaseapp.com",
+      projectId: "donutlogin",
+      appId: "1:123456:web:abcdef",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().getRedirectResult()
+      .then((result) => {
+        if (result.user) {
+          alert(`Bine ai venit, ${result.user.displayName}`);
+        }
+      })
+      .catch((error) => {
+        console.error("Eroare la login cu redirect:", error);
+      });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

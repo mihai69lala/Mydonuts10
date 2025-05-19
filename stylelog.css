@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #dca4fc, #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 320px;
+  position: relative;
+}
+
+.donut {
+  font-size: 4rem;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.donut.animate-toggle {
+  animation: donutPulse 0.7s ease forwards;
+}
+
+@keyframes donutPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 0 rgba(214, 51, 108, 0));
+    color: #d6336c;
+  }
+  50% {
+    transform: scale(1.5) rotate(15deg);
+    filter: drop-shadow(0 0 8px #d6336c);
+    color: #ff7fbf;
+  }
+  70% {
+    transform: scale(1.3) rotate(-10deg);
+    filter: drop-shadow(0 0 12px #d6336c);
+    color: #ff4f9e;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 0 rgba(214, 51, 108, 0));
+    color: #d6336c;
+  }
+}
+
+#form-title {
+  margin-top: 0.5rem;
+  color: #d6336c;
+  transition: color 0.3s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  padding: 0.7rem 2.5rem 0.7rem 0.7rem; /* spațiu pentru iconiță la dreapta */
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 1px;
+  padding: 10px 20px; /* aici era o virgulă greșită */
+  background: linear-gradient(135deg, #2b67d8, #a255ee);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #5a67d8, #a04dd8);
+  transform: translateY(-3px) scale(1.18);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#forgot-password {
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: none;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.actions {
+  margin-top: 1rem;
+}
+
+.google-btn {
+ margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #2b67d8, #a255ee);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.7s ease;
+   box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.google-btn:hover {
+  background-color: #3367D6;
+}
+
+/* Wrapper pentru parola cu iconiță */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Butonul ochi */
+#togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: #888;
+  background: none;
+  border: none;
+  padding: 0;
+  gap: 4px;
+  transition: color 0.3s ease;
+}
+
+#togglePassword:hover {
+  color: #d6336c;
+}
+
+/* Wrapper gene - lipit de ochi */
+#togglePassword .eyelashes {
+  display: flex;
+  gap: 3px;
+  position: relative;
+  top: -3px;
+}
+
+/* Genele (3 linii) */
+#togglePassword .eyelashes div {
+  width: 3px;
+  height: 8px;
+  background: #444;
+  border-radius: 2px;
+  transform-origin: bottom center;
+  animation: blink-lash 5s infinite ease-in-out;
+  animation-delay: calc(var(--i) * 0.15s);
+}
+
+/* Delay-uri diferite pentru fiecare gene */
+#togglePassword .eyelashes div:nth-child(1) { --i: 0; }
+#togglePassword .eyelashes div:nth-child(2) { --i: 1; }
+#togglePassword .eyelashes div:nth-child(3) { --i: 2; }
+
+/* Animatie clipire gene (inchidere ochi) */
+@keyframes blink-lash {
+  0%, 95%, 100% { transform: rotate(0deg); opacity: 1; }
+  97% { transform: rotate(45deg); opacity: 0.3; }
+}
+
+/* Animatie clipire iconita ochi cand faci click */
+#togglePassword.blink {
+  animation: blink-eye 0.4s forwards;
+}
+
+@keyframes blink-eye {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(0.1); }
+  100% { transform: scaleY(1); }
+}
